@@ -1,0 +1,22 @@
+{
+  "name": "music_store_app",
+  "description": "Music collection application",
+  "main": "app.js",
+  "authors": [
+    "Preeti Viswanathan <vis.preeti@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/preeV42500/music_store_app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "backbone": "^1.3.3"
+  }
+}
