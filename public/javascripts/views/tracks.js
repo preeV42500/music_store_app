@@ -2,14 +2,15 @@ var $overlay = $("#overlay");
 var Tracks = Backbone.View.extend({
   duration: 300,
   template: Handlebars.compile($("[data-name=tracks]").html()),
-  open: function() {
+  open: function() { // fade in modal and overlay
     this.$el.add($overlay).fadeIn(this.duration);
   },
   close: function(e) {
     e.preventDefault();
     this.fadeOut();
+    history.back(); // go back to previous history state
   },
-  fadeOut: function() {
+  fadeOut: function() { // fade out modal and overlay
     $overlay.fadeOut(this.duration);
     this.$el.fadeOut(this.duration, function() {
       this.remove();
