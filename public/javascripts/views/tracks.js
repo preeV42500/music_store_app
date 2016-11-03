@@ -1,5 +1,5 @@
 var $overlay = $("#overlay");
-var Tracks = Backbone.View.extend({
+var TracksView = Backbone.View.extend({
   duration: 300,
   template: Handlebars.compile($("[data-name=tracks]").html()),
   open: function() { // fade in modal and overlay

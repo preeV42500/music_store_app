@@ -11,8 +11,8 @@ var App = {
   },
   tracksLoaded: function(tracks) { // create new tracks view and render it
     var tracks_modal = new TracksView({
-      collection: tracks,
-      album: this.selected_album.toJSON()
+      album: this.selected_album.toJSON(),
+      collection: tracks
     });
 
     tracks_modal.render();
