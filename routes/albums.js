@@ -13,7 +13,9 @@ module.exports = function(router) {
     res.json(album);
   });
   router.get('/albums/new', function(req, res) {
-    res.render('new');
+    res.render('new', {
+      albums: albums_module.get()
+    });
   });
   router.put('/albums/:album_id', function(req, res) {
     var album_id = +req.params.album_id;
