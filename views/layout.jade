@@ -8,6 +8,22 @@ html
     +javascript_include_tag('vendor/all')
     +javascript_include_tag('handlebars_templates')
   body
+    header
+      #cart
+        label(for="cart_toggle") 2 items
+        input#cart_toggle(type="checkbox")
+        #items
+          ul
+            li
+              a(href="#") Remove
+              Album Name x 1
+              small $19.00
+            li
+              a(href="#") Remove
+              Really Long Album Name x 2
+              small $19.00
+          p $50.00
+
     main
       block content
     +javascript_include_tag('application')
