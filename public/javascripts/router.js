@@ -17,4 +17,4 @@ Backbone.history.start({
 $(document).on("click", "a[href^='/']", function(e) {
   e.preventDefault();
   router.navigate($(e.currentTarget).attr("href").replace(/^\//, ""), {trigger: true});
-})
+});
