@@ -1,0 +1,17 @@
+{{#if name}}
+  <label for="user_toggle">{{name}}</label>
+  <input id="user_toggle" type="checkbox" />
+  <div id="options">
+    <ul>
+      <li>
+        <a class="orders" href="/orders">View Orders</a>
+      </li>
+      <li>
+        <a class="logout" href="/logout">Log Out</a>
+      </li>
+    </ul>
+  </div>
+{{else}}
+  <a class="login" href="/login">Login</a> |
+  <a class="signup" href="/signup">Sign Up</a>
+{{/if}}

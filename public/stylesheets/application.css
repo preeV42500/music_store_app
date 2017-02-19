@@ -22,7 +22,8 @@ form dd {
 }
 form input[type="text"],
 form input[type="date"],
-form input[type="url"] {
+form input[type="url"],
+form input[type="password"] {
   width: 100%;
   height: 30px;
   padding: 5px 8px;
@@ -88,30 +89,46 @@ input[type='submit']:active {
   top: 2px;
   box-shadow: 1px 1px 0 1px #008a73;
 }
+input[type='submit'] + a.button {
+  margin-left: 10px;
+}
 header {
   width: 800px;
   padding: 25px 40px;
   margin: 0 auto;
 }
-#cart {
+#cart,
+#user_options {
   position: relative;
   float: right;
   width: 50%;
   padding: 15px 0 0 0;
   text-align: right;
 }
-#cart label {
+#cart label,
+#user_options label,
+#cart p,
+#user_options p,
+#cart a,
+#user_options a {
   display: inline-block;
   padding: 2px 3px;
   cursor: pointer;
 }
-#cart input {
+#cart input,
+#user_options input {
   display: none;
 }
-#cart input:checked + #items {
+#cart input:checked + #items,
+#user_options input:checked + #items,
+#cart input:checked + #options,
+#user_options input:checked + #options {
   display: block;
 }
-#cart #items {
+#cart #items,
+#user_options #items,
+#cart #options,
+#user_options #options {
   display: none;
   position: absolute;
   top: 100%;
@@ -121,17 +138,24 @@ header {
   color: #fff;
   background: #00a388;
 }
-#cart #items li {
+#cart #items li,
+#user_options #items li,
+#cart #options li,
+#user_options #options li {
   padding: 5px 0;
   text-align: left;
   font-size: 12px;
 }
-#cart #items small {
+#cart #items small,
+#user_options #items small,
+#cart #options small,
+#user_options #options small {
   float: right;
   margin: 0 0 0 10px;
   font-size: 11px;
 }
-#cart #items a {
+#cart #items a,
+#user_options #items a {
   float: left;
   position: relative;
   width: 12px;
@@ -142,22 +166,53 @@ header {
   transform: rotate(45deg);
 }
 #cart #items a:before,
-#cart #items a:after {
+#user_options #items a:before,
+#cart #items a:after,
+#user_options #items a:after {
   position: absolute;
   content: "";
   background: #b00b00;
 }
-#cart #items a:before {
+#cart #items a:before,
+#user_options #items a:before {
   top: 0;
   bottom: 0;
   left: 50%;
   margin-left: -1px;
   width: 2px;
 }
-#cart #items a:after {
+#cart #items a:after,
+#user_options #items a:after {
   top: 50%;
   right: 0;
   left: 0;
   height: 2px;
   margin-top: -1px;
+}
+#cart #items a.button,
+#user_options #items a.button {
+  float: right;
+  margin: 5px 0;
+  padding: 6px;
+  text-indent: 0;
+  width: auto;
+  height: auto;
+  transform: none;
+  color: #00a388;
+  background: #fff;
+}
+#cart #items a.button:before,
+#user_options #items a.button:before,
+#cart #items a.button:after,
+#user_options #items a.button:after {
+  background: transparent;
+}
+#user_options {
+  width: 15%;
+}
+#user_options a {
+  text-decoration: none;
+}
+#user_options #options a {
+  color: #fff;
 }

@@ -5,7 +5,14 @@ var App = {
     this.index = new IndexView();
     this.renderAlbums();
     this.createCart();
+    this.createUserView();
     this.bindEvents();
+  },
+  createUserView: function() {
+    this.user = new User();
+    new UserView({
+      model: this.user
+    });
   },
   renderAlbums: function() {
     this.albums.each(this.renderAlbumView); // render album view for each model in the collection
@@ -21,6 +28,14 @@ var App = {
   },
   newAlbum: function() { // create and render new album view
     new NewAlbumView();
+  },
+  loginView: function() { // create and render login view
+    new LoginView({
+      model: this.user
+    });
+  },
+  signupView: function() { // create and render signup view
+    new SignupView();
   },
   bindEvents: function() {
     _.extend(this, Backbone.Events);

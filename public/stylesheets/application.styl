@@ -20,7 +20,8 @@ form
     padding: 0 0 20px 0
   input[type="text"],
   input[type="date"],
-  input[type="url"]
+  input[type="url"],
+  input[type="password"]
     width: 100%
     height: 30px
     padding: 5px 8px
@@ -52,27 +53,31 @@ form
 a.button, input[type='submit']
   button()
 
+input[type='submit']
+  + a.button
+    margin-left: 10px
+
 header
   width: 800px
   padding: 25px 40px
   margin: 0 auto
 
-#cart
+#cart, #user_options
   position: relative
   float: right
   width: 50%
   padding: 15px 0 0 0
   text-align: right
-  label
+  label, p, a
     display: inline-block
     padding: 2px 3px
     cursor: pointer
   input
     display: none
     &:checked
-      + #items
+      + #items, + #options
         display: block
-  #items
+  #items, #options
     display: none
     position: absolute
     top: 100%
@@ -89,6 +94,8 @@ header
       float: right
       margin: 0 0 0 10px
       font-size: 11px
+
+  #items
     a
       float: left
       position: relative
@@ -115,3 +122,23 @@ header
         left: 0
         height: 2px
         margin-top: -1px
+      &.button
+        float: right
+        margin: 5px 0
+        padding: 6px
+        text-indent: 0
+        width: auto
+        height: auto
+        transform: none
+        color: colors.button.bg
+        background: colors.button.text
+        &:before, &:after
+          background: transparent
+
+#user_options
+  width: 15%
+  a
+    text-decoration: none
+  #options
+    a
+      color: colors.button.text
