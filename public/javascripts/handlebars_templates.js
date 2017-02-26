@@ -66,12 +66,12 @@ this["JST"]["user"] = Handlebars.template({"1":function(container,depth0,helpers
     var helper;
 
   return "<label for=\"user_toggle\">"
-    + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"name","hash":{},"data":data}) : helper)))
+    + container.escapeExpression(((helper = (helper = helpers.username || (depth0 != null ? depth0.username : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"username","hash":{},"data":data}) : helper)))
     + "</label><input id=\"user_toggle\" type=\"checkbox\" /><div id=\"options\"><ul><li><a class=\"orders\" href=\"/orders\">View Orders</a></li><li><a class=\"logout\" href=\"/logout\">Log Out</a></li></ul></div>";
 },"3":function(container,depth0,helpers,partials,data) {
     return "<a class=\"login\" href=\"/login\">Login</a> |<a class=\"signup\" href=\"/signup\">Sign Up</a>";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return ((stack1 = helpers["if"].call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.name : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "");
+  return ((stack1 = helpers["if"].call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.username : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "");
 },"useData":true});

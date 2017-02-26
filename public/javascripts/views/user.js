@@ -14,11 +14,11 @@ var UserView = Backbone.View.extend({
       type: "get",
       data: { order_id: self.model.id },
       success: function(json) {
-        // call method on the App object that will create order view to display orders
+        // call method on the App object that will create order views
       }
     });
   },
-  logoutUser: function(e) { 
+  logoutUser: function(e) {
     e.preventDefault();
     this.model.logout();
     // clear/reset cart
@@ -29,6 +29,6 @@ var UserView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
-    this.on("change", this.render);
+    this.listenTo(this.model, "change", this.render);
   }
 });
