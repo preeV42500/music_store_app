@@ -37,6 +37,10 @@ var App = {
   signupView: function() { // create and render signup view
     new SignupView();
   },
+  setMessage: function(msg) {
+    this.$el.prepend(msg);
+    this.$el.find("p:first").slideDown("slow").delay(5000).slideUp();
+  },
   bindEvents: function() {
     _.extend(this, Backbone.Events);
     this.listenTo(this.index, "add_album", this.newAlbum); // listen for add_album event on index view

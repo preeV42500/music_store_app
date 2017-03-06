@@ -69,9 +69,10 @@ header
   padding: 15px 0 0 0
   text-align: right
   label, p, a
-    display: inline-block
     padding: 2px 3px
     cursor: pointer
+  label, a
+    display: inline-block
   input
     display: none
     &:checked
@@ -142,3 +143,17 @@ header
   #options
     a
       color: colors.button.text
+
+p.success, p.error, p.neutral
+  padding: 20px
+  margin-bottom: 10px
+  display: none
+p.error
+  color: colors.delete
+  background: colors.error.bg
+p.success
+  color: colors.success.text
+  background: colors.success.bg
+p.neutral
+  color: colors.neutral.text
+  background: colors.neutral.bg

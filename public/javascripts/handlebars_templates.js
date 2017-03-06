@@ -51,7 +51,7 @@ this["JST"]["index"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":fun
 },"useData":true});
 
 this["JST"]["login"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<form action=\"/login\" method=\"get\"><h1>Log In</h1><fieldset><dl><dt><label>Username</label></dt><dd><input type=\"text\" name=\"username\" required/></dd><dt><label>Password</label></dt><dd><input type=\"password\" name=\"password\" required/></dd></dl></fieldset><fieldset class=\"actions\"><input type=\"submit\" value=\"Log In\" /><a class=\"button\" href=\"/\">Back</a></fieldset></form>";
+    return "<form action=\"/login\" method=\"post\"><h1>Log In</h1><fieldset><dl><dt><label>Username</label></dt><dd><input type=\"text\" name=\"username\" required/></dd><dt><label>Password</label></dt><dd><input type=\"password\" name=\"password\" required/></dd></dl></fieldset><fieldset class=\"actions\"><input type=\"submit\" value=\"Log In\" /><a class=\"button\" href=\"/\">Back</a></fieldset></form>";
 },"useData":true});
 
 this["JST"]["new_album"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

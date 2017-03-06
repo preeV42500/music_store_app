@@ -4,8 +4,8 @@ var User = Backbone.Model.extend({
     this.updateStorage();
   },
   logout: function() { // remove user from localStorage and clear user attributes
-    localStorage.removeItem("user");
     this.clear();
+    this.updateStorage();
   },
   updateStorage: function() {
     localStorage.setItem("user", JSON.stringify(this.toJSON()));

@@ -36,6 +36,19 @@ var CartItems = Backbone.Collection.extend({
     this.update();
     this.trigger("cart_updated");
   },
+  mergeItems: function(user_cart) {
+    var self = this;
+    user_cart.forEach(function(current_item) {
+      // if item is not already in App.cart, add it
+      if(!(self.get(current_item.id))) {
+        self.add(current_item);
+      }
+    });
+    this.update();
+  },
+  getCart: function() {
+    return this.toJSON();
+  },
   destroy: function(id) {
     this.remove(id);
     this.update();

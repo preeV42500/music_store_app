@@ -111,9 +111,14 @@ header {
 #user_options p,
 #cart a,
 #user_options a {
-  display: inline-block;
   padding: 2px 3px;
   cursor: pointer;
+}
+#cart label,
+#user_options label,
+#cart a,
+#user_options a {
+  display: inline-block;
 }
 #cart input,
 #user_options input {
@@ -215,4 +220,23 @@ header {
 }
 #user_options #options a {
   color: #fff;
+}
+p.success,
+p.error,
+p.neutral {
+  padding: 20px;
+  margin-bottom: 10px;
+  display: none;
+}
+p.error {
+  color: #b00b00;
+  background: #ff98bc;
+}
+p.success {
+  color: #0d9641;
+  background: #b0ff95;
+}
+p.neutral {
+  color: #233cff;
+  background: #95c3ff;
 }
