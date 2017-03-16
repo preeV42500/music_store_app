@@ -17,7 +17,7 @@ module.exports = function(router) {
       albums: albums_module.get()
     });
   });
-  router.put('/albums/:album_id', function(req, res) {
+  router.put('/albums/edit/:album_id', function(req, res) {
     var album_id = +req.params.album_id;
     var albums = albums_module.get();
     var current_album = _(albums).findWhere({id: album_id});
@@ -29,13 +29,13 @@ module.exports = function(router) {
     albums_module.set(albums);
     res.json(current_album);
   });
-  router.delete('/albums/:album_id', function(req, res) {
+  router.delete('/albums/delete/:album_id', function(req, res) {
     var album_id = +req.params.album_id;
     var albums = albums_module.get();
     albums = _(albums).reject(function(album) {
       return album.id === album_id;
     });
     albums_module.set(albums);
-    res.status(200).end();
+    res.json({ id: album_id });
   });
 };

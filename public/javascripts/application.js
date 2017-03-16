@@ -2,14 +2,14 @@ var App = {
   templates: JST,
   $el: $("main"), // holds reference to parent element
   indexView: function() {
+    this.user = new User();
     this.index = new IndexView();
-    this.renderAlbums();
     this.createCart();
     this.createUserView();
+    this.renderAlbums();
     this.bindEvents();
   },
   createUserView: function() {
-    this.user = new User();
     new UserView({
       model: this.user
     });
@@ -23,6 +23,11 @@ var App = {
   },
   renderAlbumView: function(album) {
     new AlbumView({
+      model: album
+    });
+  },
+  editAlbum: function(album) {
+    new EditAlbumView({
       model: album
     });
   },
@@ -45,9 +50,16 @@ var App = {
     _.extend(this, Backbone.Events);
     this.listenTo(this.index, "add_album", this.newAlbum); // listen for add_album event on index view
     this.on("add_to_cart", this.cart.addItem.bind(this.cart));
+    this.on("edit_album", this.editAlbum);
   }
 };
 
 Handlebars.registerHelper("format_price", function(price) {
   return (+price).toFixed(2);
+});
+
+Handlebars.registerHelper("isAdmin", function(options) {
+  if (App.user.isAdmin()) {
+    return options.fn(this);
+  }
 });

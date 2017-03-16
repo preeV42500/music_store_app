@@ -3,4 +3,8 @@
 <h3>{{artist}}</h3>
 <p>{{date}}</p>
 <p>${{format_price price}}</p>
-<a class="button" href="#">Add to cart</a>
+<a class="button add" href="#">Add to cart</a>
+{{#isAdmin}}
+  <a class="button edit" href="/albums/edit/">Edit Album</a>
+  <a class="button delete" href="/albums/delete/{{id}}">Delete</a>
+{{/isAdmin}}

@@ -14,6 +14,9 @@ var User = Backbone.Model.extend({
     var user = JSON.parse(localStorage.getItem("user"));
     this.set(user);
   },
+  isAdmin: function() {
+    return this.get("username") === "admin";
+  },
   initialize: function() {
     this.readStorage();
   }

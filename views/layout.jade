@@ -17,7 +17,7 @@ html
     +javascript_include_tag('application')
     +javascript_include_tag('models/album', 'models/user')
     +javascript_include_tag('collections/albums', 'collections/cart_items')
-    +javascript_include_tag('views/album', 'views/new_album', 'views/index', 'views/cart', 'views/user', 'views/login', 'views/signup')
+    +javascript_include_tag('views/album', 'views/new_album', 'views/index', 'views/cart', 'views/user', 'views/login', 'views/signup', 'views/edit_album')
     script(type="text/javascript").
       App.albums = new Albums(!{JSON.stringify(albums)});
     +javascript_include_tag('router')

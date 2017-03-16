@@ -89,6 +89,9 @@ input[type='submit']:active {
   top: 2px;
   box-shadow: 1px 1px 0 1px #008a73;
 }
+a.button + a.button {
+  margin-top: 10px;
+}
 input[type='submit'] + a.button {
   margin-left: 10px;
 }
