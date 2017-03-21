@@ -2,13 +2,22 @@ var CartView = Backbone.View.extend({
   template: App.templates.cart,
   el: $("#cart").get(0),
   events: {
-    "click a": "destroy"
+    "click a.remove": "destroy",
+    "click a.checkout": "confirmOrder"
+  },
+  confirmOrder: function(e) {
+    e.preventDefault();
+    if (!App.user.get("id")) {
+      App.trigger("login");
+    } else {
+      App.trigger("checkout");
+    }
   },
   destroy: function(e) {
     e.preventDefault();
     var $e = $(e.target);
     this.collection.trigger("destroy", +$e.attr("data-id")); // remove model from the collection
-    this.render(); // and re-render the view
+    // and re-render the view
   },
   render: function() {
     this.$el.html(this.template({

@@ -42,6 +42,11 @@ var App = {
   signupView: function() { // create and render signup view
     new SignupView();
   },
+  checkoutView: function() {
+    new CheckoutView({
+      collection: this.cart
+    });
+  },
   setMessage: function(msg) {
     this.$el.prepend(msg);
     this.$el.find("p:first").slideDown("slow").delay(5000).slideUp();
@@ -51,6 +56,8 @@ var App = {
     this.listenTo(this.index, "add_album", this.newAlbum); // listen for add_album event on index view
     this.on("add_to_cart", this.cart.addItem.bind(this.cart));
     this.on("edit_album", this.editAlbum);
+    this.on("checkout", this.checkoutView);
+    this.on("login", this.loginView);
   }
 };
 
@@ -62,4 +69,8 @@ Handlebars.registerHelper("isAdmin", function(options) {
   if (App.user.isAdmin()) {
     return options.fn(this);
   }
+});
+
+Handlebars.registerHelper("subtotal", function(price, quantity) {
+  return (+price * +quantity).toFixed(2);
 });

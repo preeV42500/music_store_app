@@ -243,3 +243,47 @@ p.neutral {
   color: #233cff;
   background: #95c3ff;
 }
+#checkout h2,
+#checkout h3,
+#checkout p {
+  padding: 0 0 5px 0;
+}
+#checkout h2 {
+  font-size: 1.5em;
+}
+#checkout h3 {
+  font-size: 1.25em;
+}
+#checkout li {
+  clear: both;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid #ececec;
+}
+#checkout img,
+#checkout div.first {
+  float: left;
+  padding: 0 10px 10px 0;
+}
+#checkout img {
+  width: 20%;
+}
+#checkout div.first {
+  width: 60%;
+}
+#checkout a.remove {
+  float: right;
+}
+#checkout div.last {
+  clear: both;
+}
+#checkout div.last p {
+  display: inline-block;
+  width: 20%;
+  padding-right: 10px;
+}
+#checkout div.last p input {
+  width: 40%;
+}
+#checkout a.placeorder {
+  margin-right: 10px;
+}

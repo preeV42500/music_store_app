@@ -1,0 +1,27 @@
+<h1>Confirm Items</h1>
+<ul id="items">
+  {{#each items}}
+    <li>
+      <img src="{{cover}}" />
+      <div class="first">
+        <h3>{{title}}</h3>
+        <p>{{artist}}</p>
+        <p>{{date}}</p>
+      </div>
+      <a class="button remove" data-id="{{id}}" href="#">Remove</a>
+      <div class="last">
+        <p>Price: ${{format_price price}}</p>
+        <p>Quantity: <input type="number" min="1" name="quantity" value="{{quantity}}"/></p>
+        <p>Subtotal: ${{subtotal price quantity}}</p>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+<h2>{{quantity}} items</h2>
+<h2>Total: ${{format_price total}}</h2>
+{{#if quantity}}
+  <a class="button placeorder" href="/orders/new">Place Order</a>
+  <a class="button" href="/">Back</a>
+{{else}}
+  <a class="button" href="/">Back</a>
+{{/if}}
