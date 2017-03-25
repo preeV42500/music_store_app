@@ -7,6 +7,7 @@ var CartView = Backbone.View.extend({
   },
   confirmOrder: function(e) {
     e.preventDefault();
+    $("#cart_toggle").prop("checked", false);
     if (!App.user.get("id")) {
       App.trigger("login");
     } else {

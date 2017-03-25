@@ -14,9 +14,7 @@ var LoginView = Backbone.View.extend({
         if (json.id) {
           App.user.login({
             id: json.id,
-            username: json.username,
-            cart: json.cart,
-            orders: json.orders
+            username: json.username
           });
           // merge items from user's cart into App.cart
           App.cart.mergeItems(json.cart);

@@ -54,6 +54,12 @@ var CartItems = Backbone.Collection.extend({
     this.update();
     this.trigger("cart_updated");
   },
+  updateItemQuantity: function(id, quantity) {
+    var item = this.get(id);
+    item.set("quantity", quantity);
+    this.update();
+    this.trigger("cart_updated");
+  },
   update: function() { // update localStorage when items are added or deleted
     this.setTotal().setQuantity().updateStorage();
   },

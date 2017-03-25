@@ -14,8 +14,7 @@ var SignupView = Backbone.View.extend({
         if(json.id) {
           App.user.login({
             id: json.id,
-            username: json.username,
-            orders: json.orders
+            username: json.username
           });
           router.navigate("/", {trigger: true});
           App.setMessage(json.message);

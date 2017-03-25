@@ -23,6 +23,8 @@ module.exports = function(router) {
     user.orders.push(Orders.getLastID());
     Users.set(users);
 
-    res.json(order);
+    res.json({
+      message: "<p class='success'>Thanks for placing your order!</p>"
+    });
   });
 };

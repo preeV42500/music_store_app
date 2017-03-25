@@ -1,5 +1,5 @@
 <h1>Confirm Items</h1>
-<ul id="items">
+<ul>
   {{#each items}}
     <li>
       <img src="{{cover}}" />
@@ -8,7 +8,7 @@
         <p>{{artist}}</p>
         <p>{{date}}</p>
       </div>
-      <a class="button remove" data-id="{{id}}" href="#">Remove</a>
+      <a class="button deleteitem" data-id="{{id}}" href="#">Remove</a>
       <div class="last">
         <p>Price: ${{format_price price}}</p>
         <p>Quantity: <input type="number" min="1" name="quantity" value="{{quantity}}"/></p>
@@ -21,7 +21,7 @@
 <h2>Total: ${{format_price total}}</h2>
 {{#if quantity}}
   <a class="button placeorder" href="/orders/new">Place Order</a>
-  <a class="button" href="/">Back</a>
+  <a class="button home" href="/">Back</a>
 {{else}}
-  <a class="button" href="/">Back</a>
+  <a class="button home" href="/">Back</a>
 {{/if}}

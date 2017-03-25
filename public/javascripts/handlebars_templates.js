@@ -66,7 +66,7 @@ this["JST"]["checkout"] = Handlebars.template({"1":function(container,depth0,hel
     + alias4(((helper = (helper = helpers.artist || (depth0 != null ? depth0.artist : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"artist","hash":{},"data":data}) : helper)))
     + "</p><p>"
     + alias4(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
-    + "</p></div><a class=\"button remove\" data-id=\""
+    + "</p></div><a class=\"button deleteitem\" data-id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "\" href=\"#\">Remove</a><div class=\"last\"><p>Price: $"
     + alias4((helpers.format_price || (depth0 && depth0.format_price) || alias2).call(alias1,(depth0 != null ? depth0.price : depth0),{"name":"format_price","hash":{},"data":data}))
@@ -76,13 +76,13 @@ this["JST"]["checkout"] = Handlebars.template({"1":function(container,depth0,hel
     + alias4((helpers.subtotal || (depth0 && depth0.subtotal) || alias2).call(alias1,(depth0 != null ? depth0.price : depth0),(depth0 != null ? depth0.quantity : depth0),{"name":"subtotal","hash":{},"data":data}))
     + "</p></div></li>";
 },"3":function(container,depth0,helpers,partials,data) {
-    return "<a class=\"button placeorder\" href=\"/orders/new\">Place Order</a><a class=\"button\" href=\"/\">Back</a>";
+    return "<a class=\"button placeorder\" href=\"/orders/new\">Place Order</a><a class=\"button home\" href=\"/\">Back</a>";
 },"5":function(container,depth0,helpers,partials,data) {
-    return "<a class=\"button\" href=\"/\">Back</a>";
+    return "<a class=\"button home\" href=\"/\">Back</a>";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3=container.escapeExpression;
 
-  return "<h1>Confirm Items</h1><ul id=\"items\">"
+  return "<h1>Confirm Items</h1><ul>"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.items : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</ul><h2>"
     + alias3(((helper = (helper = helpers.quantity || (depth0 != null ? depth0.quantity : depth0)) != null ? helper : alias2),(typeof helper === "function" ? helper.call(alias1,{"name":"quantity","hash":{},"data":data}) : helper)))
