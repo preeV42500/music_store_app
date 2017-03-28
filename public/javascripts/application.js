@@ -2,14 +2,11 @@ var App = {
   templates: JST,
   $el: $("main"), // holds reference to parent element
   indexView: function() {
-    this.user = new User();
     this.index = new IndexView();
-    this.createCart();
-    this.createUserView();
     this.renderAlbums();
-    this.bindEvents();
   },
   createUserView: function() {
+    this.user = new User();
     new UserView({
       model: this.user
     });
@@ -58,6 +55,11 @@ var App = {
     this.on("edit_album", this.editAlbum);
     this.on("checkout", this.checkoutView);
     this.on("login", this.loginView);
+  },
+  init: function() {
+    this.createUserView();
+    this.createCart();
+    this.bindEvents();
   }
 };
 

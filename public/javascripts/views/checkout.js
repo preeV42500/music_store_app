@@ -40,9 +40,7 @@ var CheckoutView = Backbone.View.extend({
   },
   homepage: function(e) {
     e.preventDefault();
-    e.stopImmediatePropagation();
-    this.stopListening();
-    router.navigate("/", {trigger:true});
+    this.remove();
   },
   updateQuantity: function(e) {
     e.preventDefault();
@@ -51,7 +49,7 @@ var CheckoutView = Backbone.View.extend({
     this.collection.updateItemQuantity(id, new_quantity);
   },
   renderCheckout: function() {
-    router.navigate("/checkout");
+    this.remove();
     App.trigger("checkout");
   },
   render: function() {

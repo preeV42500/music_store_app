@@ -49,5 +49,6 @@ var UserView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
+    this.listenTo(this.model, "user_updated", this.render);
   }
 });
