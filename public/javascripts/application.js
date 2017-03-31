@@ -4,6 +4,7 @@ var App = {
   indexView: function() {
     this.index = new IndexView();
     this.renderAlbums();
+    this.clearCheckout();
   },
   createUserView: function() {
     this.user = new User();
@@ -40,9 +41,20 @@ var App = {
     new SignupView();
   },
   checkoutView: function() {
-    new CheckoutView({
+    this.clearCheckout();
+    this.checkout = new CheckoutView({
       collection: this.cart
     });
+  },
+  ordersView: function(orders) {
+    new OrdersView({
+      collection: (new Backbone.Collection(orders))
+    });
+  },
+  clearCheckout: function() {
+    if (this.checkout) { // if checkout view already exists,
+      this.checkout.remove(); // remove it to stop listening for events before creating new one
+    }
   },
   setMessage: function(msg) {
     this.$el.prepend(msg);
@@ -55,6 +67,8 @@ var App = {
     this.on("edit_album", this.editAlbum);
     this.on("checkout", this.checkoutView);
     this.on("login", this.loginView);
+    this.on("view_orders", this.ordersView);
+    this.on("clear_checkout", this.clearCheckout);
   },
   init: function() {
     this.createUserView();

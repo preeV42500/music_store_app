@@ -5,19 +5,19 @@ var UserView = Backbone.View.extend({
     "click a.orders": "viewOrders",
     "click a.logout": "logoutUser"
   },
-  viewOrders: function(e) {
-    // get orders associated with model's id
+  viewOrders: function(e) { // get orders corresponding to user id
     e.preventDefault();
     e.stopImmediatePropagation();
-    var self = this;
+    $("#user_toggle").prop("checked", false);
     $.ajax({
       url: $(e.target).attr("href"),
       type: "get",
-      data: { order_id: self.model.get("id") },
       success: function(json) {
-        // call method on the App object that will create order views
+        // trigger event on the App object that will create OrderView
+        App.trigger("view_orders", json.orders);
       }
     });
+    App.trigger("clear_checkout");
   },
   logoutUser: function(e) {
     e.preventDefault();
@@ -39,10 +39,11 @@ var UserView = Backbone.View.extend({
         self.model.logout();
         App.cart.reset(); // reset cart
         App.cart.update();
-        App.indexView(); // return to index view
+        router.navigate("/", {trigger:true}); // return to index view
         App.setMessage(json.message);
       }
     });
+    App.trigger("clear_checkout");
   },
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));

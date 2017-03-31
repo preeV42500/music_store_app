@@ -27,4 +27,17 @@ module.exports = function(router) {
       message: "<p class='success'>Thanks for placing your order!</p>"
     });
   });
+
+  router.get("/orders/:user_id", function(req, res) {
+    var user = Users.findByID(Users.get(), {id: req.params.user_id});
+    var all_orders = Orders.get();
+    var order_list = user.orders.map(function(order_id) { // map order ids to orders
+      return Orders.findByID(all_orders, {id: order_id});
+    }).sort(function(order1, order2) {
+      return Date.parse(order2.date) - Date.parse(order1.date);
+    }); // sort by order date
+    res.json({
+      orders: order_list
+    });
+  });
 };

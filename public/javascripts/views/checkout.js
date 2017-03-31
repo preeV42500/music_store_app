@@ -33,6 +33,7 @@ var CheckoutView = Backbone.View.extend({
         App.setMessage(json.message);
       }
     });
+    this.remove();
   },
   removeItem: function(e) {
     e.preventDefault();

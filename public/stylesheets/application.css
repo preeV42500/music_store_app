@@ -287,3 +287,36 @@ p.neutral {
 #checkout a.placeorder {
   margin-right: 10px;
 }
+#view_orders header {
+  display: block;
+  width: 100%;
+  background: #ececec;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+#view_orders small {
+  display: block;
+}
+#view_orders .order_overview {
+  display: inline-block;
+  padding-right: 80px;
+}
+#view_orders .img {
+  padding: 0 10px 10px 10px;
+  width: 20%;
+  display: inline-block;
+}
+#view_orders .img img {
+  display: block;
+  width: 100%;
+}
+#view_orders .order_details {
+  display: inline-block;
+  vertical-align: top;
+}
+#view_orders .first {
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}

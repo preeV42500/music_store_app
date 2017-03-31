@@ -1,0 +1,39 @@
+<h1>Order History</h1>
+<ul>
+  {{#each orders}}
+    <li class="first">
+      <header>
+        <div class="order_overview">
+          <p>Order Placed</p>
+          <small>{{date}}</small>
+        </div>
+        <div class="order_overview">
+          <p>No. Items</p>
+          <small>{{quantity}}</small>
+        </div>
+        <div class="order_overview">
+          <p>Total</p>
+          <small>${{format_price total}}</small>
+        </div>
+      </header>
+
+      <ul>
+        {{#each items}}
+          <li>
+            <div class="img">
+              <img src="{{cover}}"/>
+            </div>
+            <div class="order_details">
+              <p>{{title}}</p>
+              <p>{{artist}}</p>
+              <small>{{date}}</small>
+              <small>${{format_price price}}</small>
+              <small>Qty: {{quantity}}</small>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>
+<a class="button" href="/">Home</a>
