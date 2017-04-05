@@ -24,7 +24,7 @@ module.exports = function(router) {
     Users.set(users);
 
     res.json({
-      message: "<p class='success'>Thanks for placing your order!</p>"
+      message: "<p class='success'>Thank you for placing your order!</p>"
     });
   });
 
